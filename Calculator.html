@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Score Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .team {
+            margin: 20px;
+        }
+
+        .team label {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .team button {
+            font-size: 16px;
+            margin: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .score {
+            font-size: 24px;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Team Score Calculator</h1>
+
+    <div id="team1" class="team">
+        <label>Team 1:</label>
+        <button onclick="updateScore('team1', 100)">+</button>
+        <button onclick="updateScore('team1', -100)">-</button>
+        <button onclick="updateScore('team1', 1000)">++</button>
+        <button onclick="updateScore('team1', -1000)">--</button>
+        <span class="score" id="score-team1">0</span>
+    </div>
+
+    <div id="team2" class="team">
+        <label>Team 2:</label>
+        <button onclick="updateScore('team2', 100)">+</button>
+        <button onclick="updateScore('team2', -100)">-</button>
+        <button onclick="updateScore('team2', 1000)">++</button>
+        <button onclick="updateScore('team2', -1000)">--</button>
+        <span class="score" id="score-team2">0</span>
+    </div>
+
+    <div id="team3" class="team">
+        <label>Team 3:</label>
+        <button onclick="updateScore('team3', 100)">+</button>
+        <button onclick="updateScore('team3', -100)">-</button>
+        <button onclick="updateScore('team3', 1000)">++</button>
+        <button onclick="updateScore('team3', -1000)">--</button>
+        <span class="score" id="score-team3">0</span>
+    </div>
+
+    <div id="team4" class="team">
+        <label>Team 4:</label>
+        <button onclick="updateScore('team4', 100)">+</button>
+        <button onclick="updateScore('team4', -100)">-</button>
+        <button onclick="updateScore('team4', 1000)">++</button>
+        <button onclick="updateScore('team4', -1000)">--</button>
+        <span class="score" id="score-team4">0</span>
+    </div>
+
+    <script>
+        // Function to update the score for a specific team
+        function updateScore(teamId, points) {
+            const scoreElement = document.getElementById(`score-${teamId}`);
+            let currentScore = parseInt(scoreElement.textContent);
+            currentScore += points;
+            scoreElement.textContent = currentScore;
+        }
+    </script>
+</body>
+</html>
